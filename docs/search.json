@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "index.html#gwas-continues-to-discover-more-loci",
+    "href": "index.html#gwas-continues-to-discover-more-loci",
+    "title": "",
+    "section": "GWAS Continues to Discover more Loci",
+    "text": "GWAS Continues to Discover more Loci"
+  },
+  {
+    "objectID": "index.html#mostly-noncoding-so-mechanism-not-well-known",
+    "href": "index.html#mostly-noncoding-so-mechanism-not-well-known",
+    "title": "",
+    "section": "Mostly noncoding so mechanism not well known",
+    "text": "Mostly noncoding so mechanism not well known\n\n\n\n\n\n\n\nRNA-Seq is too expensive\nMany tissues such has brain, pancreas, etc are not accessible\nDifferentially expressed genes can be consequence of disease status"
+  },
+  {
+    "objectID": "index.html#gene-expression-can-be-predicted-from-genotype",
+    "href": "index.html#gene-expression-can-be-predicted-from-genotype",
+    "title": "",
+    "section": "Gene expression can be predicted from genotype",
+    "text": "Gene expression can be predicted from genotype"
+  },
+  {
+    "objectID": "index.html#some-genes-are-very-well-predicted",
+    "href": "index.html#some-genes-are-very-well-predicted",
+    "title": "",
+    "section": "Some genes are very well predicted",
+    "text": "Some genes are very well predicted"
+  },
+  {
+    "objectID": "index.html#accuracy-of-prediction-depends-on-heritability",
+    "href": "index.html#accuracy-of-prediction-depends-on-heritability",
+    "title": "",
+    "section": "Accuracy of prediction depends on heritability",
+    "text": "Accuracy of prediction depends on heritability"
+  },
+  {
+    "objectID": "index.html#advantages-of-gene-level-associations",
+    "href": "index.html#advantages-of-gene-level-associations",
+    "title": "",
+    "section": "Advantages of gene level associations",
+    "text": "Advantages of gene level associations\n\n\nReduced multiple testing burden (from 10e6 to 10e4)\nThe function of genes are much better annotated than SNPs\nValidation in other model systems is possible\nReverse causality issues is less problematic because disease status doesn’t affect germline genetic markers\nIt provides the direction of effects, i.e. whether up or down regulation of a gene - increases the risk of a disease\nThe candidate causal gene is a good target for drug development"
+  },
+  {
+    "objectID": "index.html#predixcan-results-identify-drug-repositioning-candidates",
+    "href": "index.html#predixcan-results-identify-drug-repositioning-candidates",
+    "title": "",
+    "section": "PrediXcan results identify drug repositioning candidates",
+    "text": "PrediXcan results identify drug repositioning candidates\n\n\n\nSo et al, Nature Neuroscience 2017"
+  },
+  {
+    "objectID": "index.html#predixcan-association-results-are-predictive-of-drug-target-success",
+    "href": "index.html#predixcan-association-results-are-predictive-of-drug-target-success",
+    "title": "",
+    "section": "PrediXcan Association Results Are Predictive of Drug Target Success",
+    "text": "PrediXcan Association Results Are Predictive of Drug Target Success\n[]{assets/predict-drug-success.png}"
+  }
+]
