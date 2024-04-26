@@ -73,14 +73,12 @@ editor: source
 
 ## Advantages of gene level associations {background-image=assets/slide-background.svg}
 
-::: {.incremental}
 - Reduced multiple testing burden (from 10e6 to 10e4)
 - The function of genes are much better annotated than SNPs
 - Validation in other model systems is possible
 - Reverse causality issues is less problematic because disease status doesn’t affect germline genetic markers 
 - It provides the direction of effects, i.e. whether up or down regulation of a gene - increases the risk of a disease
 - The candidate causal gene is a good target for drug development
-:::
 
 ## PrediXcan results identify drug repositioning candidates {.nostretch background-image=assets/slide-background.svg}
 
@@ -90,13 +88,254 @@ editor: source
 So et al, Nature Neuroscience 2017
 ::: 
 
-## PrediXcan Association Results Are Predictive of Drug Target Success
+## PrediXcan Results Are Predictive of Drug Target Success  {background-image=assets/slide-background.svg}
 
-![]{assets/successful-drugs-higher-twas-signal.png}
+![](assets/successful-drugs-higher-twas-signal.png)
 
-## Limitations of TWAS
+## Limitations of TWAS  {background-image=assets/slide-background.svg}
 
-## Inflation in TWAS 
+:::{.columns}
+
+:::{.column width=75%}
+
+
+- Not very good at predicting low heritability genes which are more likely to be disease relevant
+- Predictions don’t transfer well across ancestries
+- Effect of rare variation is missed
+- Steady state eQTL may not be disease relevant
+
+:::
+:::
+
+# Is there inflation in TWAS?  {background-color="white"}
+
+
+## Leeuw et al report inflation in TWAS  {background-image=assets/slide-background.svg}
+
+![](assets/leeuws-twas-inflation.png){width=75%}
+
+## Leeuw et al’s Flawed TWAS Null Hypothesis {background-image=assets/slide-background.svg}
+
+
+:::{.columns}
+  
+:::{.column width=90%}
+  
+
+$$  Y = \beta ~ G_E +  \epsilon_\text{twas} $$
+$$  G_E = \sum_k \gamma_k ~ X_k $$
+
+
+![](assets/leeuws-null-hypothesis.png){width=100%}
+
+
+
+:::
+:::
+
+## What is wrong with Leeuw et al's reformulated hypothesis? {background-image=assets/slide-background.svg}
+
+<br>
+
+
+
+
+$$H_0\!:~ \text{cov}(\hat{G}_E, Y)  = 0$$
+
+
+## What is wrong with Leeuw et al's reformulated hypothesis? {background-image=assets/slide-background.svg}
+
+<br>
+
+
+$$H_0\!:~~~~ \hat\beta  ~~~~~~ = 0$$
+
+
+## Take home message {background-image=assets/slide-background.svg}
+<br>
+<br>
+
+::: {.r-fit-text}
+Never equate random variables with fixed variables
+:::
+
+## Leeuws et al claim that error in variable causes inflation {background-image=assets/slide-background.svg}
+
+:::{.columns}
+
+:::{.column width=60%}
+
+
+We want to regress $Y$ on $T$
+$$  Y = \beta ~ T +  \epsilon_\text{twas} $$
+  
+  
+$$  T = \sum_k \gamma_k ~ X_k $$
+
+
+But we only have the noisy version of $T$, $\tilde{T} = \sum_k \tilde{\gamma}_k ~ X_k$ 
+and we end up regressing $Y$ on $\tilde{T}$
+
+<br>
+
+$$  Y = \beta ~ \tilde{T} +  \tilde\epsilon $$
+  
+  
+$$  \tilde{T} = \sum_k \tilde{\gamma}_k ~ X_k $$
+
+:::
+:::
+
+## But error in variables literature contradicts that claim {background-image=assets/slide-background.svg}
+
+
+<br>
+<br>
+
+1. No inflation when using noisy explanatory variables
+
+<br>
+
+2. There is attenuation bias 
+$$| E \hat\beta | < |\beta|$$
+
+
+::: aside
+Fuller, Wayne, Measurement Error Models. 1987, John Wiley & Sons
+:::
+
+
+# But their simulations did show inflation {background-color="white"}
+
+## Joint work with {.nostretch background-image=assets/slide-background.svg}
+
+![](assets/yanyu-and-festus.png){width=65%}
+
+## TWAS Model {background-image=assets/slide-background.svg}
+
+\begin{align*}
+  Y &= \beta ~ T +  \epsilon_\text{twas} \\
+  T &= \sum_k \gamma_k ~ X_k 
+\end{align*}
+
+
+<br>
+
+What happens if $Y$ has a polygenic component?
+$$ \epsilon_\text{twas} = \sum_k X_k  ~\delta_k + \epsilon $$
+
+## Example: Single eQTL T and unrelated Y {background-image=assets/slide-background.svg}
+
+:::{.incremental}
+- $\beta = 0$ 
+
+<br>
+
+- $Y = \sum_k X_k  ~\delta_k +  \epsilon$  
+- $T = X_1$   
+
+<br>
+
+- when we regress $Y$ on $T$, $T$ will capture the association between $X_1$ and $Y$ 
+
+- for small sample sizes, the effect could be negligible but with biobank-scale data, the inflation will be more prominent
+
+:::
+
+## Example: Single eQTL T and unrelated Y {background-image=assets/slide-background.svg}
+
+![](assets/single-eqtl-example.png)
+
+## We can do the math and compute under the null {background-image=assets/slide-background.svg}
+
+:::{.incremental}
+
+- $\hat\beta$
+- $\text{var}(\hat\beta)$
+- $Z$
+- $\chi^2 = Z^2$
+
+<br>
+
+:::
+
+:::{.fragment}
+$$E~\chi^2_\text{twas} \approx 1  + N ~h^2_\delta ~ \Phi(\text{gene})$$
+:::
+
+:::{.incremental}
+- $N ~h^2_\delta ~ \Phi(\text{gene})$ is noncentrality parameter
+- $N$ is the sample size of the GWAS 
+- $h^2_\delta$ is the heritability of $Y$
+:::
+
+## Let's compare central to noncentral distributions {background-image=assets/slide-background.svg}
+
+![](assets/central-vs-noncentral-chi2.png)
+
+## Simulated Null χ2 vs Prediction {background-image=assets/slide-background.svg}
+
+![](assets/simulated-null-chi2-vs-prediction.png)
+
+## Null TWAS χ2 vs Prediction {background-image=assets/slide-background.svg}
+
+![](assets/null-twas-chi2.png)
+
+
+## Polygenic Target Trait Y & Noisy Mediator {background-image=assets/slide-background.svg}
+
+$$\begin{align}
+  Y &= \beta \cdot T + \sum_k X_k \cdot \delta_k + \epsilon \\
+  T &= \sum_k \gamma_k \cdot X_k \\
+  \tilde{T} &= \sum_k (\gamma_k + e_{\gamma,k}) \cdot X_k
+\end{align}
+$$
+
+
+
+## TWAS χ2 Statistic with Polygenic Y & Noisy Mediator {background-image=assets/slide-background.svg}
+
+$$E~\chi^2_\text{twas} \approx 1  + N ~h^2_\delta ~ \frac{\Phi(\text{gene})}{1 - \beta^2\tau^2} +  N ~ \frac{\beta^2 }{1 - \beta^2\tau^2}~\tau^2$$
+
+
+$$\tau^2 = \text{signal to noise ratio}$$
+$$ = \text{precision} = \frac{\text{var}(T)}{\text{var}(\tilde{T})}$$
+
+## Alternative χ2 with Polygenic Y and Noisy Mediator {background-image=assets/slide-background.svg}
+
+![](assets/alternative-chi2-polygenic-Y-noisy-T.png)
+
+## Dependence on Precision of Predictor {background-image=assets/slide-background.svg}
+
+![](assets/inflation-vs-precision.png)
+
+## How to Correct the Inflation {background-image=assets/slide-background.svg}
+
+::: {.incremental}
+
+- Calculate the non centrality parameter
+
+- Use noncentral χ2 to compute p-values
+
+- $\texttt{pchisq(chi2, ncp=N*h2Y*phi, df=1, lower.tail=FALSE)}$
+
+:::
+
+## Estimated Factor Φ for Genes, Metabolites, Brain Features  {background-image=assets/slide-background.svg}
+
+![](assets/phi-distribution.png)
+
+
+## Take home message {background-image=assets/slide-background.svg}
+
+:::{.incremental}
+- Standard TWAS can yield inflated p-values
+- The χ2 statistic is noncentral
+- NCP is linear in sample size
+- NCP is linear in the heritability of Y
+- $\Phi$ is a function of the mediator and can be estimated using mediator prediction weights
+- Inflation can be corrected by simply using the noncentral χ2 distribution when calculating the p-values
+:::
 
 
 

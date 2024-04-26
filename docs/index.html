@@ -388,16 +388,14 @@ Hae Kyung Im
 </section>
 <section id="advantages-of-gene-level-associations" class="slide level2" data-background-image="assets/slide-background.svg">
 <h2>Advantages of gene level associations</h2>
-<div>
 <ul>
-<li class="fragment">Reduced multiple testing burden (from 10e6 to 10e4)</li>
-<li class="fragment">The function of genes are much better annotated than SNPs</li>
-<li class="fragment">Validation in other model systems is possible</li>
-<li class="fragment">Reverse causality issues is less problematic because disease status doesn’t affect germline genetic markers</li>
-<li class="fragment">It provides the direction of effects, i.e.&nbsp;whether up or down regulation of a gene - increases the risk of a disease</li>
-<li class="fragment">The candidate causal gene is a good target for drug development</li>
+<li>Reduced multiple testing burden (from 10e6 to 10e4)</li>
+<li>The function of genes are much better annotated than SNPs</li>
+<li>Validation in other model systems is possible</li>
+<li>Reverse causality issues is less problematic because disease status doesn’t affect germline genetic markers</li>
+<li>It provides the direction of effects, i.e.&nbsp;whether up or down regulation of a gene - increases the risk of a disease</li>
+<li>The candidate causal gene is a good target for drug development</li>
 </ul>
-</div>
 </section>
 <section id="predixcan-results-identify-drug-repositioning-candidates" class="slide level2 nostretch" data-background-image="assets/slide-background.svg">
 <h2>PrediXcan results identify drug repositioning candidates</h2>
@@ -406,9 +404,208 @@ Hae Kyung Im
 <aside><div>
 <p>So et al, Nature Neuroscience 2017</p>
 </div></aside></section>
-<section id="predixcan-association-results-are-predictive-of-drug-target-success" class="slide level2">
-<h2>PrediXcan Association Results Are Predictive of Drug Target Success</h2>
-<p>[]{assets/predict-drug-success.png}</p>
+<section id="predixcan-results-are-predictive-of-drug-target-success" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>PrediXcan Results Are Predictive of Drug Target Success</h2>
+
+<img data-src="assets/successful-drugs-higher-twas-signal.png" class="r-stretch"></section>
+<section id="limitations-of-twas" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>Limitations of TWAS</h2>
+<div class="columns">
+<div class="column" style="width:75%;">
+<ul>
+<li>Not very good at predicting low heritability genes which are more likely to be disease relevant</li>
+<li>Predictions don’t transfer well across ancestries</li>
+<li>Effect of rare variation is missed</li>
+<li>Steady state eQTL may not be disease relevant</li>
+</ul>
+</div>
+</div>
+</section></section>
+<section>
+<section id="is-there-inflation-in-twas" class="title-slide slide level1 center" data-background-color="white">
+<h1>Is there inflation in TWAS?</h1>
+
+</section>
+<section id="leeuw-et-al-report-inflation-in-twas" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>Leeuw et al report inflation in TWAS</h2>
+
+<img data-src="assets/leeuws-twas-inflation.png" style="width:75.0%" class="r-stretch"></section>
+<section id="leeuw-et-als-flawed-twas-null-hypothesis" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>Leeuw et al’s Flawed TWAS Null Hypothesis</h2>
+<div class="columns">
+<div class="column" style="width:90%;">
+<p><span class="math display">\[  Y = \beta ~ G_E +  \epsilon_\text{twas} \]</span> <span class="math display">\[  G_E = \sum_k \gamma_k ~ X_k \]</span></p>
+<p><img data-src="assets/leeuws-null-hypothesis.png" style="width:100.0%"></p>
+</div>
+</div>
+</section>
+<section id="what-is-wrong-with-leeuw-et-als-reformulated-hypothesis" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>What is wrong with Leeuw et al’s reformulated hypothesis?</h2>
+<p><br></p>
+<p><span class="math display">\[H_0\!:~ \text{cov}(\hat{G}_E, Y)  = 0\]</span></p>
+</section>
+<section id="what-is-wrong-with-leeuw-et-als-reformulated-hypothesis-1" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>What is wrong with Leeuw et al’s reformulated hypothesis?</h2>
+<p><br></p>
+<p><span class="math display">\[H_0\!:~~~~ \hat\beta  ~~~~~~ = 0\]</span></p>
+</section>
+<section id="take-home-message" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>Take home message</h2>
+<p><br> <br></p>
+<div class="r-fit-text">
+<p>Never equate random variables with fixed variables</p>
+</div>
+</section>
+<section id="leeuws-et-al-claim-that-error-in-variable-causes-inflation" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>Leeuws et al claim that error in variable causes inflation</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>We want to regress <span class="math inline">\(Y\)</span> on <span class="math inline">\(T\)</span> <span class="math display">\[  Y = \beta ~ T +  \epsilon_\text{twas} \]</span></p>
+<p><span class="math display">\[  T = \sum_k \gamma_k ~ X_k \]</span></p>
+<p>But we only have the noisy version of <span class="math inline">\(T\)</span>, <span class="math inline">\(\tilde{T} = \sum_k \tilde{\gamma}_k ~ X_k\)</span> and we end up regressing <span class="math inline">\(Y\)</span> on <span class="math inline">\(\tilde{T}\)</span></p>
+<p><br></p>
+<p><span class="math display">\[  Y = \beta ~ \tilde{T} +  \tilde\epsilon \]</span></p>
+<p><span class="math display">\[  \tilde{T} = \sum_k \tilde{\gamma}_k ~ X_k \]</span></p>
+</div>
+</div>
+</section>
+<section id="but-error-in-variables-literature-contradicts-that-claim" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>But error in variables literature contradicts that claim</h2>
+<p><br> <br></p>
+<ol type="1">
+<li>No inflation when using noisy explanatory variables</li>
+</ol>
+<p><br></p>
+<ol start="2" type="1">
+<li>There is attenuation bias <span class="math display">\[| E \hat\beta | &lt; |\beta|\]</span></li>
+</ol>
+
+<aside><div>
+<p>Fuller, Wayne, Measurement Error Models. 1987, John Wiley &amp; Sons</p>
+</div></aside></section></section>
+<section>
+<section id="but-their-simulations-did-show-inflation" class="title-slide slide level1 center" data-background-color="white">
+<h1>But their simulations did show inflation</h1>
+
+</section>
+<section id="joint-work-with" class="slide level2 nostretch" data-background-image="assets/slide-background.svg">
+<h2>Joint work with</h2>
+<p><img data-src="assets/yanyu-and-festus.png" style="width:65.0%"></p>
+</section>
+<section id="twas-model" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>TWAS Model</h2>
+<p><span class="math display">\[\begin{align*}
+  Y &amp;= \beta ~ T +  \epsilon_\text{twas} \\
+  T &amp;= \sum_k \gamma_k ~ X_k
+\end{align*}\]</span></p>
+<p><br></p>
+<p>What happens if <span class="math inline">\(Y\)</span> has a polygenic component? <span class="math display">\[ \epsilon_\text{twas} = \sum_k X_k  ~\delta_k + \epsilon \]</span></p>
+</section>
+<section id="example-single-eqtl-t-and-unrelated-y" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>Example: Single eQTL T and unrelated Y</h2>
+<div>
+<ul>
+<li class="fragment"><span class="math inline">\(\beta = 0\)</span></li>
+</ul>
+<p><br></p>
+<ul>
+<li class="fragment"><span class="math inline">\(Y = \sum_k X_k ~\delta_k + \epsilon\)</span><br>
+</li>
+<li class="fragment"><span class="math inline">\(T = X_1\)</span></li>
+</ul>
+<p><br></p>
+<ul>
+<li class="fragment"><p>when we regress <span class="math inline">\(Y\)</span> on <span class="math inline">\(T\)</span>, <span class="math inline">\(T\)</span> will capture the association between <span class="math inline">\(X_1\)</span> and <span class="math inline">\(Y\)</span></p></li>
+<li class="fragment"><p>for small sample sizes, the effect could be negligible but with biobank-scale data, the inflation will be more prominent</p></li>
+</ul>
+</div>
+</section>
+<section id="example-single-eqtl-t-and-unrelated-y-1" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>Example: Single eQTL T and unrelated Y</h2>
+
+<img data-src="assets/single-eqtl-example.png" class="r-stretch"></section>
+<section id="we-can-do-the-math-and-compute-under-the-null" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>We can do the math and compute under the null</h2>
+<div>
+<ul>
+<li class="fragment"><span class="math inline">\(\hat\beta\)</span></li>
+<li class="fragment"><span class="math inline">\(\text{var}(\hat\beta)\)</span></li>
+<li class="fragment"><span class="math inline">\(Z\)</span></li>
+<li class="fragment"><span class="math inline">\(\chi^2 = Z^2\)</span></li>
+</ul>
+<p><br></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[E~\chi^2_\text{twas} \approx 1  + N ~h^2_\delta ~ \Phi(\text{gene})\]</span></p>
+</div>
+<div>
+<ul>
+<li class="fragment"><span class="math inline">\(N ~h^2_\delta ~ \Phi(\text{gene})\)</span> is noncentrality parameter</li>
+<li class="fragment"><span class="math inline">\(N\)</span> is the sample size of the GWAS</li>
+<li class="fragment"><span class="math inline">\(h^2_\delta\)</span> is the heritability of <span class="math inline">\(Y\)</span></li>
+</ul>
+</div>
+</section>
+<section id="lets-compare-central-to-noncentral-distributions" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>Let’s compare central to noncentral distributions</h2>
+
+<img data-src="assets/central-vs-noncentral-chi2.png" class="r-stretch"></section>
+<section id="simulated-null-χ2-vs-prediction" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>Simulated Null χ2 vs Prediction</h2>
+
+<img data-src="assets/simulated-null-chi2-vs-prediction.png" class="r-stretch"></section>
+<section id="null-twas-χ2-vs-prediction" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>Null TWAS χ2 vs Prediction</h2>
+
+<img data-src="assets/null-twas-chi2.png" class="r-stretch"></section>
+<section id="polygenic-target-trait-y-noisy-mediator" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>Polygenic Target Trait Y &amp; Noisy Mediator</h2>
+<p><span class="math display">\[\begin{align}
+  Y &amp;= \beta \cdot T + \sum_k X_k \cdot \delta_k + \epsilon \\
+  T &amp;= \sum_k \gamma_k \cdot X_k \\
+  \tilde{T} &amp;= \sum_k (\gamma_k + e_{\gamma,k}) \cdot X_k
+\end{align}
+\]</span></p>
+</section>
+<section id="twas-χ2-statistic-with-polygenic-y-noisy-mediator" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>TWAS χ2 Statistic with Polygenic Y &amp; Noisy Mediator</h2>
+<p><span class="math display">\[E~\chi^2_\text{twas} \approx 1  + N ~h^2_\delta ~ \frac{\Phi(\text{gene})}{1 - \beta^2\tau^2} +  N ~ \frac{\beta^2 }{1 - \beta^2\tau^2}~\tau^2\]</span></p>
+<p><span class="math display">\[\tau^2 = \text{signal to noise ratio}\]</span> <span class="math display">\[ = \text{precision} = \frac{\text{var}(T)}{\text{var}(\tilde{T})}\]</span></p>
+</section>
+<section id="alternative-χ2-with-polygenic-y-and-noisy-mediator" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>Alternative χ2 with Polygenic Y and Noisy Mediator</h2>
+
+<img data-src="assets/alternative-chi2-polygenic-Y-noisy-T.png" class="r-stretch"></section>
+<section id="dependence-on-precision-of-predictor" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>Dependence on Precision of Predictor</h2>
+
+<img data-src="assets/inflation-vs-precision.png" class="r-stretch"></section>
+<section id="how-to-correct-the-inflation" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>How to Correct the Inflation</h2>
+<div>
+<ul>
+<li class="fragment"><p>Calculate the non centrality parameter</p></li>
+<li class="fragment"><p>Use noncentral χ2 to compute p-values</p></li>
+<li class="fragment"><p><span class="math inline">\(\texttt{pchisq(chi2, ncp=N*h2Y*phi, df=1, lower.tail=FALSE)}\)</span></p></li>
+</ul>
+</div>
+</section>
+<section id="estimated-factor-φ-for-genes-metabolites-brain-features" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>Estimated Factor Φ for Genes, Metabolites, Brain Features</h2>
+
+<img data-src="assets/phi-distribution.png" class="r-stretch"></section>
+<section id="take-home-message-1" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>Take home message</h2>
+<div>
+<ul>
+<li class="fragment">Standard TWAS can yield inflated p-values</li>
+<li class="fragment">The χ2 statistic is noncentral</li>
+<li class="fragment">NCP is linear in sample size</li>
+<li class="fragment">NCP is linear in the heritability of Y</li>
+<li class="fragment"><span class="math inline">\(\Phi\)</span> is a function of the mediator and can be estimated using mediator prediction weights</li>
+<li class="fragment">Inflation can be corrected by simply using the noncentral χ2 distribution when calculating the p-values</li>
+</ul>
+</div>
 
 <div class="footer footer-default">
 
