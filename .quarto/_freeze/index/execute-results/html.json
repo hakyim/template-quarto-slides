@@ -1,0 +1,11 @@
+{
+  "hash": "6c6229f63e81ef2de9b20e91f6c74e61",
+  "result": {
+    "markdown": "---\nformat:\n  revealjs:\n    slide-number: c/t\n    width: 1600\n    height: 900\n    css:\n      - theme/theme.css\n    theme: simple\n    echo: true\neditor: source\ntitle: On the Problem of Inflation in TWAS\n---\n\n\n\n\n```{scss}\n\ndiv {\n  &.callout {\n    font-size: 2.0rem !important;\n  }\n}\n\n```\n\n\n\n\n<br>\n\n<h2>PCB Presentation</h2>\n\n<h3>2023-04-26 Friday</h3>\n\n<h3>Hae Kyung Im</h3>\n\n\n# Review of TWAS\n\n## GWAS Continues to Discover more Loci\n\n![](assets/gwas-catalog-2024-04-10.png)\n\n## Mostly noncoding so mechanism not well known\n\n![](assets/gwas-predixcan-diagram)\n\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
