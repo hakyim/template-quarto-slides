@@ -10,7 +10,7 @@ format:
 editor: source
 ---
 
-# On the Problem of Inflation in TWAS {background-color="#800000"}
+# On the Problem of Inflation in TWAS {background-color="#808080"}
 <br>
 
 <h2>PCB Presentation</h2>
@@ -20,7 +20,7 @@ editor: source
 <h3>Hae Kyung Im</h3>
 
 
-# Review of TWAS  {background-color="#800000"}
+# Review of TWAS  {background-color="#808080"}
 
 ## GWAS Continues to Discover more Loci {background-image=assets/slide-background.svg}
 

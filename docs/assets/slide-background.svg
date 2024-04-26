@@ -42,11 +42,11 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="opacity:1;fill:#800000;stroke-width:0.252892;fill-opacity:1"
+       style="opacity:1;fill:#800000;fill-opacity:1;stroke-width:0.254236"
        id="rect1"
-       width="1603.2965"
-       height="128.3644"
-       x="-1.9877822"
-       y="-1.9877822" />
+       width="1600"
+       height="130"
+       x="0"
+       y="0" />
   </g>
 </svg>
