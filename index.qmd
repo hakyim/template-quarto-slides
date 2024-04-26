@@ -10,7 +10,7 @@ format:
 editor: source
 ---
 
-# On the Problem of Inflation in TWAS {background-color="#808080"}
+# On the Problem of Inflation in TWAS {background-color="white"}
 <br>
 
 <h2>PCB Presentation</h2>
@@ -20,7 +20,7 @@ editor: source
 <h3>Hae Kyung Im</h3>
 
 
-# Review of TWAS  {background-color="#808080"}
+# Review of TWAS  {background-color="white"}
 
 ## GWAS Continues to Discover more Loci {background-image=assets/slide-background.svg}
 
@@ -92,5 +92,11 @@ So et al, Nature Neuroscience 2017
 
 ## PrediXcan Association Results Are Predictive of Drug Target Success
 
-![]{assets/predict-drug-success.png}
+![]{assets/successful-drugs-higher-twas-signal.png}
+
+## Limitations of TWAS
+
+## Inflation in TWAS 
+
+
 
