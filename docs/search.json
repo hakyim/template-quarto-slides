@@ -4,7 +4,7 @@
     "href": "index.html#gwas-continues-to-discover-more-loci",
     "title": "",
     "section": "GWAS Continues to Discover more Loci",
-    "text": "GWAS Continues to Discover more Loci"
+    "text": "GWAS Continues to Discover more Loci\n\n\n\ndownloaded April 2024"
   },
   {
     "objectID": "index.html#mostly-noncoding-so-mechanism-not-well-known",
@@ -63,11 +63,11 @@
     "text": "Limitations of TWAS\n\n\n\nNot very good at predicting low heritability genes which are more likely to be disease relevant\nPredictions don’t transfer well across ancestries\nEffect of rare variation is missed\nSteady state eQTL may not be disease relevant"
   },
   {
-    "objectID": "index.html#leeuw-et-al-report-inflation-in-twas",
-    "href": "index.html#leeuw-et-al-report-inflation-in-twas",
+    "objectID": "index.html#leeuw-et-al-report-2023-inflation-in-twas",
+    "href": "index.html#leeuw-et-al-report-2023-inflation-in-twas",
     "title": "",
-    "section": "Leeuw et al report inflation in TWAS",
-    "text": "Leeuw et al report inflation in TWAS"
+    "section": "Leeuw et al report (2023) inflation in TWAS",
+    "text": "Leeuw et al report (2023) inflation in TWAS"
   },
   {
     "objectID": "index.html#leeuw-et-als-flawed-twas-null-hypothesis",
@@ -130,7 +130,7 @@
     "href": "index.html#example-single-eqtl-t-and-unrelated-y",
     "title": "",
     "section": "Example: Single eQTL T and unrelated Y",
-    "text": "Example: Single eQTL T and unrelated Y\n\n\n\\(\\beta = 0\\)\n\n\n\n\\(Y = \\sum_k X_k ~\\delta_k + \\epsilon\\)\n\n\\(T = X_1\\)\n\n\n\nwhen we regress \\(Y\\) on \\(T\\), \\(T\\) will capture the association between \\(X_1\\) and \\(Y\\)\nfor small sample sizes, the effect could be negligible but with biobank-scale data, the inflation will be more prominent"
+    "text": "Example: Single eQTL T and unrelated Y\n\n\n\\(\\beta = 0~~~~~~~~~~~~~~~~~~~~~~~~ \\text{i.e. } T \\text{  is unrelated to } Y\\)\n\\(Y = \\sum_k X_k ~\\delta_k + \\epsilon ~~~~~ \\text{we assume fully polygenic } Y\\)\n\n\\(T = X_1\\)\n\n\n\nwhat will happen if we regress \\(Y\\) on \\(T\\)?\n\\(T\\) will capture the association between \\(X_1\\) and \\(Y\\)\nfor small sample sizes, the effect could be negligible but with biobank-scale data, the association will be significant\nis this a problem?\nwe can show that \\(E\\chi^2 = 1 + \\frac{N h^2}{M}\\)"
   },
   {
     "objectID": "index.html#example-single-eqtl-t-and-unrelated-y-1",
@@ -140,39 +140,46 @@
     "text": "Example: Single eQTL T and unrelated Y"
   },
   {
-    "objectID": "index.html#we-can-do-the-math-and-compute-under-the-null",
-    "href": "index.html#we-can-do-the-math-and-compute-under-the-null",
+    "objectID": "index.html#we-can-do-the-math-in-more-general-case",
+    "href": "index.html#we-can-do-the-math-in-more-general-case",
     "title": "",
-    "section": "We can do the math and compute under the null",
-    "text": "We can do the math and compute under the null\n\n\n\\(\\hat\\beta\\)\n\\(\\text{var}(\\hat\\beta)\\)\n\\(Z\\)\n\\(\\chi^2 = Z^2\\)\n\n\n\n\n\\[E~\\chi^2_\\text{twas} \\approx 1  + N ~h^2_\\delta ~ \\Phi(\\text{gene})\\]\n\n\n\n\\(N ~h^2_\\delta ~ \\Phi(\\text{gene})\\) is noncentrality parameter\n\\(N\\) is the sample size of the GWAS\n\\(h^2_\\delta\\) is the heritability of \\(Y\\)"
+    "section": "We can do the math in more general case",
+    "text": "We can do the math in more general case\n\n\n\\(\\hat\\beta\\)\n\\(\\text{var}(\\hat\\beta)\\)\n\\(Z\\)\n\\(\\chi^2 = Z^2\\)\n\n\n\n\n\\[E~\\chi^2_\\text{twas} \\approx 1  + N ~h^2_\\delta ~ \\Phi(\\text{gene})\\]\n\n\n\n\\(N ~h^2_\\delta ~ \\Phi(\\text{gene})\\) is noncentrality parameter\n\\(N\\) is the sample size of the GWAS\n\\(h^2_\\delta\\) is the heritability of \\(Y\\)"
   },
   {
-    "objectID": "index.html#lets-compare-central-to-noncentral-distributions",
-    "href": "index.html#lets-compare-central-to-noncentral-distributions",
+    "objectID": "index.html#lets-compare-central-to-noncentral-χ2-distributions",
+    "href": "index.html#lets-compare-central-to-noncentral-χ2-distributions",
     "title": "",
-    "section": "Let’s compare central to noncentral distributions",
-    "text": "Let’s compare central to noncentral distributions"
+    "section": "Let’s compare central to noncentral χ2 distributions",
+    "text": "Let’s compare central to noncentral χ2 distributions"
   },
   {
-    "objectID": "index.html#simulated-null-χ2-vs-prediction",
-    "href": "index.html#simulated-null-χ2-vs-prediction",
+    "objectID": "index.html#what-does-the-inflation-factor-phi-look-like",
+    "href": "index.html#what-does-the-inflation-factor-phi-look-like",
     "title": "",
-    "section": "Simulated Null χ2 vs Prediction",
-    "text": "Simulated Null χ2 vs Prediction"
+    "section": "What does the inflation factor \\(\\Phi\\) look like",
+    "text": "What does the inflation factor \\(\\Phi\\) look like\n\n\n\\(\\Phi_\\text =  \\frac{\\tilde\\gamma' \\cdot \\Sigma^2 \\cdot \\tilde\\gamma}{\\tilde\\gamma' \\cdot \\Sigma \\cdot \\tilde\\gamma} \\frac{1}{M}\\)\n\\(\\frac{1}{M} \\le \\Phi \\le 1\\)\nlower bound attained when SNPs are independent\nupper bound attained when SNPs are perfectly correlated\n\\(\\Phi = \\frac{\\text{tr}(\\Sigma^2)}{M^2}\\) if mediator is also polygenic"
   },
   {
-    "objectID": "index.html#null-twas-χ2-vs-prediction",
-    "href": "index.html#null-twas-χ2-vs-prediction",
+    "objectID": "index.html#simulated-null-χ2-vs-theoretical",
+    "href": "index.html#simulated-null-χ2-vs-theoretical",
     "title": "",
-    "section": "Null TWAS χ2 vs Prediction",
-    "text": "Null TWAS χ2 vs Prediction"
+    "section": "Simulated Null χ2 vs theoretical",
+    "text": "Simulated Null χ2 vs theoretical\n\n\n\n\n \n\\[E~\\chi^2_\\text{twas} \\approx 1  + N ~h^2_\\delta ~ \\Phi(\\text{gene})\\]"
+  },
+  {
+    "objectID": "index.html#null-twas-χ2-vs-theoretical",
+    "href": "index.html#null-twas-χ2-vs-theoretical",
+    "title": "",
+    "section": "Null TWAS χ2 vs theoretical",
+    "text": "Null TWAS χ2 vs theoretical\n\n\n\n\nUK Biobank genotype, null phenotype \\(Y\\), and predicted gene expression\n\\[E~\\chi^2_\\text{twas} \\approx 1  + N ~h^2_\\delta ~ \\Phi(\\text{gene})\\]"
   },
   {
     "objectID": "index.html#polygenic-target-trait-y-noisy-mediator",
     "href": "index.html#polygenic-target-trait-y-noisy-mediator",
     "title": "",
     "section": "Polygenic Target Trait Y & Noisy Mediator",
-    "text": "Polygenic Target Trait Y & Noisy Mediator\n\\[\\begin{align}\n  Y &= \\beta \\cdot T + \\sum_k X_k \\cdot \\delta_k + \\epsilon \\\\\n  T &= \\sum_k \\gamma_k \\cdot X_k \\\\\n  \\tilde{T} &= \\sum_k (\\gamma_k + e_{\\gamma,k}) \\cdot X_k\n\\end{align}\n\\]"
+    "text": "Polygenic Target Trait Y & Noisy Mediator\n\\[\\begin{align}\n  Y &= \\beta \\cdot T + \\sum_k X_k \\cdot \\delta_k + \\epsilon \\\\\n  T &= \\sum_k \\gamma_k \\cdot X_k \\\\\n  \\tilde{T} &= \\sum_k (\\gamma_k + e_{\\gamma,k}) \\cdot X_k\n\\end{align}\n\\]\n \n\\[E~\\chi^2_\\text{twas} \\approx 1  + N ~h^2_\\delta ~ \\Phi(\\text{gene})\\]"
   },
   {
     "objectID": "index.html#twas-χ2-statistic-with-polygenic-y-noisy-mediator",

@@ -22,9 +22,13 @@ editor: source
 
 # Review of TWAS  {background-color="white"}
 
-## GWAS Continues to Discover more Loci {background-image=assets/slide-background.svg}
+## GWAS Continues to Discover more Loci {.nostretch background-image=assets/slide-background.svg}
 
-![](assets/gwas-catalog-2024-04-10.png)
+![](assets/gwas-catalog-2024-04-10.png){width=70%}
+
+::: aside
+downloaded April 2024
+:::
 
 ## Mostly noncoding so mechanism not well known {background-image=assets/slide-background.svg}
 
@@ -110,7 +114,7 @@ So et al, Nature Neuroscience 2017
 # Is there inflation in TWAS?  {background-color="white"}
 
 
-## Leeuw et al report inflation in TWAS  {background-image=assets/slide-background.svg}
+## Leeuw et al report (2023) inflation in TWAS  {background-image=assets/slide-background.svg}
 
 ![](assets/leeuws-twas-inflation.png){width=75%}
 
@@ -227,18 +231,22 @@ $$ \epsilon_\text{twas} = \sum_k X_k  ~\delta_k + \epsilon $$
 ## Example: Single eQTL T and unrelated Y {background-image=assets/slide-background.svg}
 
 :::{.incremental}
-- $\beta = 0$ 
+- $\beta = 0~~~~~~~~~~~~~~~~~~~~~~~~ \text{i.e. } T \text{  is unrelated to } Y$ 
 
-<br>
-
-- $Y = \sum_k X_k  ~\delta_k +  \epsilon$  
+- $Y = \sum_k X_k  ~\delta_k +  \epsilon ~~~~~ \text{we assume fully polygenic } Y$  
 - $T = X_1$   
 
 <br>
 
-- when we regress $Y$ on $T$, $T$ will capture the association between $X_1$ and $Y$ 
+- what will happen if we regress $Y$ on $T$?
 
-- for small sample sizes, the effect could be negligible but with biobank-scale data, the inflation will be more prominent
+- $T$ will capture the association between $X_1$ and $Y$ 
+
+- for small sample sizes, the effect could be negligible but with biobank-scale data, the association will be significant
+
+- is this a problem?
+
+- we can show that $E\chi^2 = 1 + \frac{N h^2}{M}$
 
 :::
 
@@ -246,7 +254,7 @@ $$ \epsilon_\text{twas} = \sum_k X_k  ~\delta_k + \epsilon $$
 
 ![](assets/single-eqtl-example.png)
 
-## We can do the math and compute under the null {background-image=assets/slide-background.svg}
+## We can do the math in more general case {background-image=assets/slide-background.svg}
 
 :::{.incremental}
 
@@ -269,18 +277,64 @@ $$E~\chi^2_\text{twas} \approx 1  + N ~h^2_\delta ~ \Phi(\text{gene})$$
 - $h^2_\delta$ is the heritability of $Y$
 :::
 
-## Let's compare central to noncentral distributions {background-image=assets/slide-background.svg}
+## Let's compare central to noncentral χ2 distributions {background-image=assets/slide-background.svg}
 
 ![](assets/central-vs-noncentral-chi2.png)
 
-## Simulated Null χ2 vs Prediction {background-image=assets/slide-background.svg}
+## What does the inflation factor $\Phi$ look like  {background-image=assets/slide-background.svg}
+
+:::{.incremental}
+- $\Phi_\text =
+ \frac{\tilde\gamma' \cdot \Sigma^2  \cdot \tilde\gamma}{\tilde\gamma' \cdot  \Sigma  \cdot \tilde\gamma} \frac{1}{M}$
+
+- $\frac{1}{M} \le \Phi \le 1$
+
+- lower bound attained when SNPs are independent
+
+- upper bound attained when SNPs are perfectly correlated
+
+- $\Phi = \frac{\text{tr}(\Sigma^2)}{M^2}$ if mediator is also polygenic
+:::
+
+
+
+## Simulated Null χ2 vs theoretical {background-image=assets/slide-background.svg}
+
+:::{.columns}
+:::{.column width=70%}
 
 ![](assets/simulated-null-chi2-vs-prediction.png)
 
-## Null TWAS χ2 vs Prediction {background-image=assets/slide-background.svg}
+:::
+
+:::{.column width=30%}
+
+<br>
+<br>
+
+$$E~\chi^2_\text{twas} \approx 1  + N ~h^2_\delta ~ \Phi(\text{gene})$$
+:::
+
+:::
+
+## Null TWAS χ2 vs theoretical {background-image=assets/slide-background.svg}
+
+:::{.columns}
+:::{.column width=70%}
 
 ![](assets/null-twas-chi2.png)
 
+:::
+
+:::{.column width=30%}
+
+
+UK Biobank genotype, null phenotype $Y$, and predicted gene expression
+
+$$E~\chi^2_\text{twas} \approx 1  + N ~h^2_\delta ~ \Phi(\text{gene})$$
+:::
+
+:::
 
 ## Polygenic Target Trait Y & Noisy Mediator {background-image=assets/slide-background.svg}
 
@@ -291,6 +345,11 @@ $$\begin{align}
 \end{align}
 $$
 
+
+<br>
+<br>
+
+$$E~\chi^2_\text{twas} \approx 1  + N ~h^2_\delta ~ \Phi(\text{gene})$$
 
 
 ## TWAS χ2 Statistic with Polygenic Y & Noisy Mediator {background-image=assets/slide-background.svg}

@@ -345,10 +345,13 @@ Hae Kyung Im
 <h1>Review of TWAS</h1>
 
 </section>
-<section id="gwas-continues-to-discover-more-loci" class="slide level2" data-background-image="assets/slide-background.svg">
+<section id="gwas-continues-to-discover-more-loci" class="slide level2 nostretch" data-background-image="assets/slide-background.svg">
 <h2>GWAS Continues to Discover more Loci</h2>
+<p><img data-src="assets/gwas-catalog-2024-04-10.png" style="width:70.0%"></p>
 
-<img data-src="assets/gwas-catalog-2024-04-10.png" class="r-stretch"></section>
+<aside><div>
+<p>downloaded April 2024</p>
+</div></aside></section>
 <section id="mostly-noncoding-so-mechanism-not-well-known" class="slide level2" data-background-image="assets/slide-background.svg">
 <h2>Mostly noncoding so mechanism not well known</h2>
 <p><img data-src="assets/gwas-predixcan-diagram.png" width="1200"></p>
@@ -426,8 +429,8 @@ Hae Kyung Im
 <h1>Is there inflation in TWAS?</h1>
 
 </section>
-<section id="leeuw-et-al-report-inflation-in-twas" class="slide level2" data-background-image="assets/slide-background.svg">
-<h2>Leeuw et al report inflation in TWAS</h2>
+<section id="leeuw-et-al-report-2023-inflation-in-twas" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>Leeuw et al report (2023) inflation in TWAS</h2>
 
 <img data-src="assets/leeuws-twas-inflation.png" style="width:75.0%" class="r-stretch"></section>
 <section id="leeuw-et-als-flawed-twas-null-hypothesis" class="slide level2" data-background-image="assets/slide-background.svg">
@@ -505,18 +508,18 @@ Hae Kyung Im
 <h2>Example: Single eQTL T and unrelated Y</h2>
 <div>
 <ul>
-<li class="fragment"><span class="math inline">\(\beta = 0\)</span></li>
+<li class="fragment"><p><span class="math inline">\(\beta = 0~~~~~~~~~~~~~~~~~~~~~~~~ \text{i.e. } T \text{  is unrelated to } Y\)</span></p></li>
+<li class="fragment"><p><span class="math inline">\(Y = \sum_k X_k ~\delta_k + \epsilon ~~~~~ \text{we assume fully polygenic } Y\)</span><br>
+</p></li>
+<li class="fragment"><p><span class="math inline">\(T = X_1\)</span></p></li>
 </ul>
 <p><br></p>
 <ul>
-<li class="fragment"><span class="math inline">\(Y = \sum_k X_k ~\delta_k + \epsilon\)</span><br>
-</li>
-<li class="fragment"><span class="math inline">\(T = X_1\)</span></li>
-</ul>
-<p><br></p>
-<ul>
-<li class="fragment"><p>when we regress <span class="math inline">\(Y\)</span> on <span class="math inline">\(T\)</span>, <span class="math inline">\(T\)</span> will capture the association between <span class="math inline">\(X_1\)</span> and <span class="math inline">\(Y\)</span></p></li>
-<li class="fragment"><p>for small sample sizes, the effect could be negligible but with biobank-scale data, the inflation will be more prominent</p></li>
+<li class="fragment"><p>what will happen if we regress <span class="math inline">\(Y\)</span> on <span class="math inline">\(T\)</span>?</p></li>
+<li class="fragment"><p><span class="math inline">\(T\)</span> will capture the association between <span class="math inline">\(X_1\)</span> and <span class="math inline">\(Y\)</span></p></li>
+<li class="fragment"><p>for small sample sizes, the effect could be negligible but with biobank-scale data, the association will be significant</p></li>
+<li class="fragment"><p>is this a problem?</p></li>
+<li class="fragment"><p>we can show that <span class="math inline">\(E\chi^2 = 1 + \frac{N h^2}{M}\)</span></p></li>
 </ul>
 </div>
 </section>
@@ -524,8 +527,8 @@ Hae Kyung Im
 <h2>Example: Single eQTL T and unrelated Y</h2>
 
 <img data-src="assets/single-eqtl-example.png" class="r-stretch"></section>
-<section id="we-can-do-the-math-and-compute-under-the-null" class="slide level2" data-background-image="assets/slide-background.svg">
-<h2>We can do the math and compute under the null</h2>
+<section id="we-can-do-the-math-in-more-general-case" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>We can do the math in more general case</h2>
 <div>
 <ul>
 <li class="fragment"><span class="math inline">\(\hat\beta\)</span></li>
@@ -546,18 +549,44 @@ Hae Kyung Im
 </ul>
 </div>
 </section>
-<section id="lets-compare-central-to-noncentral-distributions" class="slide level2" data-background-image="assets/slide-background.svg">
-<h2>Let’s compare central to noncentral distributions</h2>
+<section id="lets-compare-central-to-noncentral-χ2-distributions" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>Let’s compare central to noncentral χ2 distributions</h2>
 
 <img data-src="assets/central-vs-noncentral-chi2.png" class="r-stretch"></section>
-<section id="simulated-null-χ2-vs-prediction" class="slide level2" data-background-image="assets/slide-background.svg">
-<h2>Simulated Null χ2 vs Prediction</h2>
-
-<img data-src="assets/simulated-null-chi2-vs-prediction.png" class="r-stretch"></section>
-<section id="null-twas-χ2-vs-prediction" class="slide level2" data-background-image="assets/slide-background.svg">
-<h2>Null TWAS χ2 vs Prediction</h2>
-
-<img data-src="assets/null-twas-chi2.png" class="r-stretch"></section>
+<section id="what-does-the-inflation-factor-phi-look-like" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>What does the inflation factor <span class="math inline">\(\Phi\)</span> look like</h2>
+<div>
+<ul>
+<li class="fragment"><p><span class="math inline">\(\Phi_\text =  \frac{\tilde\gamma' \cdot \Sigma^2 \cdot \tilde\gamma}{\tilde\gamma' \cdot \Sigma \cdot \tilde\gamma} \frac{1}{M}\)</span></p></li>
+<li class="fragment"><p><span class="math inline">\(\frac{1}{M} \le \Phi \le 1\)</span></p></li>
+<li class="fragment"><p>lower bound attained when SNPs are independent</p></li>
+<li class="fragment"><p>upper bound attained when SNPs are perfectly correlated</p></li>
+<li class="fragment"><p><span class="math inline">\(\Phi = \frac{\text{tr}(\Sigma^2)}{M^2}\)</span> if mediator is also polygenic</p></li>
+</ul>
+</div>
+</section>
+<section id="simulated-null-χ2-vs-theoretical" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>Simulated Null χ2 vs theoretical</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p><img data-src="assets/simulated-null-chi2-vs-prediction.png"></p>
+</div><div class="column" style="width:30%;">
+<p><br> <br></p>
+<p><span class="math display">\[E~\chi^2_\text{twas} \approx 1  + N ~h^2_\delta ~ \Phi(\text{gene})\]</span></p>
+</div>
+</div>
+</section>
+<section id="null-twas-χ2-vs-theoretical" class="slide level2" data-background-image="assets/slide-background.svg">
+<h2>Null TWAS χ2 vs theoretical</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p><img data-src="assets/null-twas-chi2.png"></p>
+</div><div class="column" style="width:30%;">
+<p>UK Biobank genotype, null phenotype <span class="math inline">\(Y\)</span>, and predicted gene expression</p>
+<p><span class="math display">\[E~\chi^2_\text{twas} \approx 1  + N ~h^2_\delta ~ \Phi(\text{gene})\]</span></p>
+</div>
+</div>
+</section>
 <section id="polygenic-target-trait-y-noisy-mediator" class="slide level2" data-background-image="assets/slide-background.svg">
 <h2>Polygenic Target Trait Y &amp; Noisy Mediator</h2>
 <p><span class="math display">\[\begin{align}
@@ -566,6 +595,8 @@ Hae Kyung Im
   \tilde{T} &amp;= \sum_k (\gamma_k + e_{\gamma,k}) \cdot X_k
 \end{align}
 \]</span></p>
+<p><br> <br></p>
+<p><span class="math display">\[E~\chi^2_\text{twas} \approx 1  + N ~h^2_\delta ~ \Phi(\text{gene})\]</span></p>
 </section>
 <section id="twas-χ2-statistic-with-polygenic-y-noisy-mediator" class="slide level2" data-background-image="assets/slide-background.svg">
 <h2>TWAS χ2 Statistic with Polygenic Y &amp; Noisy Mediator</h2>
