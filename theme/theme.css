@@ -1,0 +1,11 @@
+.reveal .slides > section > section { 
+    text-align:left; 
+  }
+
+.text-col {
+    height: 80%;
+    background-color: lightgray;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+

@@ -1,0 +1,96 @@
+---
+format:
+  revealjs:
+    slide-number: c/t
+    width: 1600
+    height: 900
+    css: ["theme/theme.css"]
+    theme: [simple,theme/mystyle.scss]
+    echo: true
+editor: source
+---
+
+# On the Problem of Inflation in TWAS {background-color="#800000"}
+<br>
+
+<h2>PCB Presentation</h2>
+
+<h3>2023-04-26 Friday</h3>
+
+<h3>Hae Kyung Im</h3>
+
+
+# Review of TWAS  {background-color="#800000"}
+
+## GWAS Continues to Discover more Loci {background-image=assets/slide-background.svg}
+
+![](assets/gwas-catalog-2024-04-10.png)
+
+## Mostly noncoding so mechanism not well known {background-image=assets/slide-background.svg}
+
+![](assets/gwas-predixcan-diagram){width=1200}
+
+::: {.absolute bottom=0 left=0 .fragment .fade-out}
+![](assets/blank-rectangle.png){width="1600" height="380" fig-alt="blank"}
+:::
+
+
+
+:::{.absolute bottom=200 left=1200 .fragment .fade-in}
+:::{.fragment .fade-out}
+
+- RNA-Seq is too expensive
+- Many tissues such has brain, pancreas, etc are not accessible
+- Differentially expressed genes can be consequence of disease status
+
+:::
+:::
+
+::: {.absolute bottom=0 left=0 .fragment .fade-out}
+![](assets/blank-rectangle.png){width="370" height="440" fig-alt="blank"}
+:::
+
+::: {.absolute bottom=260 left=360 .fragment .fade-out}
+![](assets/blank-rectangle.png){width="110" height="30" fig-alt="blank"}
+:::
+
+::: {.absolute bottom=210 left=720 .fragment .fade-out}
+![](assets/blank-rectangle.png){width="210" height="50" fig-alt="blank"}
+:::
+
+## Gene expression can be predicted from genotype {background-image=assets/slide-background.svg}
+
+![](assets/reference-transcriptome-gtex.png)
+
+## Some genes are very well predicted {background-image=assets/slide-background.svg}
+
+![](assets/performance-top-genes.png)
+
+## Accuracy of prediction depends on heritability {.nostretch  background-image=assets/slide-background.svg}
+
+![](assets/performance-all-genes.png){width=75%}
+
+
+## Advantages of gene level associations {background-image=assets/slide-background.svg}
+
+::: {.incremental}
+- Reduced multiple testing burden (from 10e6 to 10e4)
+- The function of genes are much better annotated than SNPs
+- Validation in other model systems is possible
+- Reverse causality issues is less problematic because disease status doesn’t affect germline genetic markers 
+- It provides the direction of effects, i.e. whether up or down regulation of a gene - increases the risk of a disease
+- The candidate causal gene is a good target for drug development
+:::
+
+## PrediXcan results identify drug repositioning candidates {.nostretch background-image=assets/slide-background.svg}
+
+![](assets/so-drug-repurposing.png){width=75%}
+
+:::aside
+So et al, Nature Neuroscience 2017
+::: 
+
+## PrediXcan Association Results Are Predictive of Drug Target Success
+
+![]{assets/predict-drug-success.png}
+

@@ -1,0 +1,25 @@
+project:
+  type: website
+  output-dir: docs
+  preview:
+    port: 4204
+
+# title: "On the Problem of Inflation in TWAS"
+# date: today
+# date-modified: last-modified
+# author-title: ""
+# affiliation-title: ""
+# published-title: ""
+# modified-title: ""
+# title-block-categories: false
+# number-sections: false
+# bibliography: references.bib
+# author:
+#   name: Hae Kyung Im
+#   url: https://hakyimlab.org
+#   orcid: 
+#   affiliation: University of Chicago
+
+google-scholar: true
+google-analytics: G-8SL8WKCMYZ
+
