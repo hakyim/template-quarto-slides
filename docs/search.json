@@ -221,6 +221,6 @@
     "href": "index.html#take-home-message-1",
     "title": "",
     "section": "Take home message",
-    "text": "Take home message\n\n\nStandard TWAS can yield inflated p-values\nThe χ2 statistic is noncentral\nNCP is linear in sample size\nNCP is linear in the heritability of Y\n\\(\\Phi\\) is a function of the mediator and can be estimated using mediator prediction weights\nInflation can be corrected by simply using the noncentral χ2 distribution when calculating the p-values"
+    "text": "Take home message\n\n\nStandard TWAS can yield inflated p-values\nThe χ2 statistic is noncentral\nNCP is linear in sample size\nNCP is linear in the heritability of Y\n\\(\\Phi\\) is a function of the mediator and can be estimated using mediator prediction weights\nInflation can be corrected by simply using the noncentral χ2 distribution when calculating the p-values\n\n\n\n\ntemplate presentation with quarto"
   }
 ]

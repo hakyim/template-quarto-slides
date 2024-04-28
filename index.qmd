@@ -7,10 +7,11 @@ format:
     css: ["theme/theme.css"]
     theme: [simple,theme/mystyle.scss]
     echo: true
+    footer: "template presentation with quarto"
 editor: source
 ---
 
-# On the Problem of Inflation in TWAS {background-color="white"}
+# TEMPLATE SLIDES {background-color="white"}
 <br>
 
 <h2>PCB Presentation</h2>
